@@ -17,6 +17,9 @@ function addToCart(name, price) {
     } else {
         cart[name] = { price, quantity: 1 };
     }
+    if (name === 'Rat Painting') {
+        fbq('trackCustom', 'Rat Painting Custom Event');
+    }
     updateCartCount();
     showNotification(`Added ${name} to cart!`);
     saveCartToLocalStorage();
